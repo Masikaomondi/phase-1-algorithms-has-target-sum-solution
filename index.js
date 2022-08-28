@@ -1,12 +1,19 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let seenNumber = {};
+  for(let i = 0; i< array.length; i++){
+    let complement = target - array[i];
+    if (seenNumber[complement]) return true
+    seenNumber[array[i]] = true;
+  }
+  return false;
 }
 
-/* 
+/*
   Write the Big O time complexity of your function here
 */
 
-/* 
+/*
   Add your pseudocode here
 */
 
